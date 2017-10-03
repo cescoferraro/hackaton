@@ -1,0 +1,11 @@
+language: node_js 
+
+node_js:
+  - 8
+
+before_install:
+    - echo 32 
+install:
+    - yarn install
+script:
+    - yarn build 

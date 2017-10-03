@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --env.production",
-    "dev": "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "awesome-typescript-loader": "^3.2.3",
