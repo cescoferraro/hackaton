@@ -1,1 +1,9 @@
-alert("hehehe")
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { Component } from "./app"
+
+
+ReactDOM.render(
+    <Component />,
+    document.getElementById("root")
+);
