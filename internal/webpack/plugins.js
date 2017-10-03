@@ -9,7 +9,7 @@ const hmr = env =>
 
 const icons = new FaviconsWebpackPlugin({
   config: {
-    appName: 'stool',
+    appName: 'hackaton',
     background_color: '#000000',
     display: 'fullscreen',
     lang: 'pt',
