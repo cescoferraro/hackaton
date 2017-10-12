@@ -1,4 +1,5 @@
 const path = require('path');
+
 module.exports = (env = { production: false }) => ({
   devServer: {
     allowedHosts: ['localhost:5555'],
@@ -12,7 +13,6 @@ module.exports = (env = { production: false }) => ({
     public: 'localhost:5555',
     watchContentBase: true
   },
-
   devtool: env.production ? 'source-map' : 'cheap-module-eval-source-map',
   entry: {
     main: path.resolve(__dirname, './client/client.tsx')
