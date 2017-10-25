@@ -4,6 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MyAppBar from './bar';
 import { Provider, connect } from 'react-redux'
 import Link from 'redux-first-router-link'
+
+
 const App = ({ location, userId, onClick }) => {
     console.log(location)
     switch (location.type) {
@@ -11,11 +13,9 @@ const App = ({ location, userId, onClick }) => {
             return (<div>
                 <MyAppBar />
                 <h1>HOME</h1>
-
-                // all 3 "links" dispatch actions:
-                <Link to="/user/123">User 123</Link> // action updates location state + changes address bar
-                <Link to={{ type: 'USER', payload: { id: 456 } }}>User 456</Link> // so does this
-                <span onClick={onClick}>User 5</span>   // so does this, but without SEO benefits
+                <Link to="{{ type: 'USER', payload: { id: 123} }}">User 123</Link>
+                <Link to={{ type: 'USER', payload: { id: 456 } }}>User 456</Link>
+                <span onClick={onClick}>User 5</span>
             </div>)
         case "USER":
             return <h1>USER: {userId}</h1>
