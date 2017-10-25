@@ -4,6 +4,10 @@ const webpack = require('webpack');
 const HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin;
 const noop = require('noop-webpack-plugin');
 
+const define = env =>
+  new webpack.DefinePlugin({
+    env: JSON.stringify(env.production ? 'production' : 'development')
+  });
 const hmr = env =>
   !env.production ? new HotModuleReplacementPlugin() : noop();
 
@@ -30,4 +34,4 @@ const html = new HtmlWebpackPlugin({
   chunks: ['main']
 });
 
-module.exports = env => [icons, html, hmr(env)];
+module.exports = env => [icons, html, hmr(env), define(env)];
