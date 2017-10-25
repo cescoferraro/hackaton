@@ -13,7 +13,7 @@ const App = ({ location, userId, onClick }) => {
             return (<div>
                 <MyAppBar />
                 <h1>HOME</h1>
-                <Link to="{{ type: 'USER', payload: { id: 123} }}">User 123</Link>
+                <Link to={{ type: 'USER', payload: { id: 123 } }}>User 123</Link>
                 <Link to={{ type: 'USER', payload: { id: 456 } }}>User 456</Link>
                 <span onClick={onClick}>User 5</span>
             </div>)
