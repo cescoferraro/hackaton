@@ -4,18 +4,27 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MyAppBar from './bar';
 import { Provider, connect } from 'react-redux'
 import Link from 'redux-first-router-link'
-
+import * as CSS from "./hey.css"
 
 const App = ({ location, userId, onClick }) => {
-    console.log(location)
     switch (location.type) {
         case "HOME":
             return (<div>
                 <MyAppBar />
-                <h1>HOME</h1>
-                <Link to={{ type: 'USER', payload: { id: 123 } }}>User 123</Link>
-                <Link to={{ type: 'USER', payload: { id: 456 } }}>User 456</Link>
-                <span onClick={onClick}>User 5</span>
+                <div>
+                    <div className={CSS.ramiro}>
+                        <h1>HOME</h1>
+                        <Link to={{ type: 'USER', payload: { id: 123 } }}>User 123</Link>
+                        <Link to={{ type: 'USER', payload: { id: 456 } }}>User 456</Link>
+                        <span onClick={onClick}>User 5</span>
+                    </div>
+                    <div className={CSS.test}>
+                        <h1>HOME</h1>
+                        <Link to={{ type: 'USER', payload: { id: 123 } }}>User 123</Link>
+                        <Link to={{ type: 'USER', payload: { id: 456 } }}>User 456</Link>
+                        <span onClick={onClick}>User 5</span>
+                    </div>
+                </div>
             </div>)
         case "USER":
             return <h1>USER: {userId}</h1>

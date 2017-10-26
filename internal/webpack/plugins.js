@@ -1,3 +1,4 @@
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin-cesco');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -33,5 +34,7 @@ const html = new HtmlWebpackPlugin({
   template: './public/index.html',
   chunks: ['main']
 });
-
-module.exports = env => [icons, html, hmr(env), define(env)];
+const cssDev = () => {
+  return new ExtractCssChunks();
+};
+module.exports = env => [cssDev(), icons, html, hmr(env), define(env)];

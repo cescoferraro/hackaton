@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Provider } from 'react-redux'
 import store from "../store/configureStore"
 import AppContainer from "./app"
+import "./hey.css"
 
 ReactDOM.render(
     <Provider store={store}>
