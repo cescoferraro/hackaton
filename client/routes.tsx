@@ -7,6 +7,7 @@ const isProd = () => {
     return true
 }
 export const routesMap = {
-    HOME: isProd() ? hackaton : '/',      // action <-> url path
-    USER: isProd() ? hackaton + '/user/:id' : '/user/:id',  // :id is a dynamic segment
+    HOME: isProd() ? hackaton : '/',
+    USER: isProd() ? hackaton + '/user/:id' : '/user/:id',
+    CHALLENGE: isProd() ? hackaton + '/challenge/:id' : '/challenge/:id'
 }

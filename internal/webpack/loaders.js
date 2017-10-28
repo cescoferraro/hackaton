@@ -1,5 +1,38 @@
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 
+const images = () => {
+  return {
+    test: /\.(gif|png|jpe?g)$/i,
+    loaders: [
+      {
+        loader: 'file-loader',
+        query: {
+          emitFile: true,
+          name: 'images/img-[sha512:hash:base64:7].[ext]'
+        }
+      },
+      {
+        loader: 'image-webpack-loader',
+        query: {
+          mozjpeg: {
+            progressive: true
+          },
+          gifsicle: {
+            interlaced: false
+          },
+          optipng: {
+            optimizationLevel: 4
+          },
+          pngquant: {
+            quality: '75-90',
+            speed: 3
+          }
+        }
+      }
+    ]
+  };
+};
+
 const postCSS = {
   loader: 'postcss-loader',
   options: {
@@ -50,5 +83,5 @@ const typeScript = env => ({
 });
 
 module.exports = env => ({
-  rules: [typeScript(env), css(env)]
+    rules: [typeScript(env), css(env), images()]
 });
