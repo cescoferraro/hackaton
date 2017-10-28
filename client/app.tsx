@@ -43,10 +43,11 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                 return false
             }
         }
+
+        let content;
         switch (this.props.location.type) {
             case "HOME":
-                return <div>
-                    <MyAppBar />
+                content =  <div>
                     {
                         !isLoaded(this.props.challenges)
                             ? 'Loading'
@@ -60,17 +61,23 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                                             challenges={this.props.challenges}
                                         /> : <h2>We need you to enable geoloation</h2>
                                 )
-                    }
+                    }                    
                 </div>
+                break;
             case "CHALLENGE":
-                return <h1>Challange</h1>
+                content = <h1>Challange</h1>
+                break;
             case "LOGIN":
-                return <h1>Login</h1>
+                content = <h1>Login</h1>
+                break;
             case "PROFILE":
-                return <h1>USER: {this.props.userId}</h1>
+                content = <h1>USER: {this.props.userId}</h1>
+                break;
             default:
-                return <h1>not found</h1>
-        }
+                content = <h1>not found</h1>
+                break;
+        }    
+        return <div><MyAppBar/>{content}</div>
     }
 }
 
