@@ -33,8 +33,6 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
         return (<div>
             {
                 <div className={CSS.test} >
-                    {/* <h2>{this.state.lat}</h2> */}
-                    {/* <h2>{this.state.long}</h2> */}
                     <MyMapComponent lat={this.props.lat} long={this.props.long} challenges={this.props.challenges} isMarkerShown />
                     <List>
                         {

@@ -8,6 +8,7 @@ const isProd = () => {
 }
 export const routesMap = {
     HOME: isProd() ? hackaton : '/',
-    USER: isProd() ? hackaton + '/user/:id' : '/user/:id',
+    LOGIN: isProd() ? hackaton + '/login' : '/login',
+    PROFILE: isProd() ? hackaton + '/profile' : '/profile',
     CHALLENGE: isProd() ? hackaton + '/challenge/:id' : '/challenge/:id'
 }

@@ -8,14 +8,3 @@ export const challengeReducer = (state = null, action: { type: string; payload: 
     }
 }
 
-export const userIdReducer = (state = null, action: { type: string; payload: { id: string } }) => {
-    switch (action.type) {
-        case 'HOME':
-        case NOT_FOUND:
-            return null
-        case 'USER':
-            return action.payload.id
-        default:
-            return state
-    }
-}

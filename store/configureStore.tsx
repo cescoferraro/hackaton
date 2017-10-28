@@ -9,7 +9,6 @@ import { connectRoutes } from 'redux-first-router'
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory'
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
-import { userIdReducer } from "./reducers"
 import { challengeReducer } from "./reducers"
 import { routesMap } from "../client/routes"
 
@@ -30,7 +29,7 @@ const createStoreWithFirebase = compose(reactReduxFirebase(config, reduxFirebase
 const history = createHistory()
 const { reducer, middleware, enhancer } = connectRoutes(history, routesMap) // yes, 3 redux aspects
 const rootReducer = combineReducers({
-    location: reducer, userId: userIdReducer, firebase: firebaseStateReducer, challangeId: challengeReducer
+    location: reducer, firebase: firebaseStateReducer, challangeId: challengeReducer
 })
 const middlewares = composeWithDevTools(applyMiddleware(middleware))
 export default createStoreWithFirebase(rootReducer, compose(enhancer, middlewares))
