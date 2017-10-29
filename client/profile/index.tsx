@@ -15,6 +15,9 @@ import FileFolder from 'material-ui/svg-icons/file/folder';
 import FontIcon from 'material-ui/FontIcon';
 import TextField from 'material-ui/TextField';
 import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/Card';
+import IconButton from 'material-ui/IconButton';
+import MapsPlace from 'material-ui/svg-icons/maps/place';
+
 //import avatarPicture from '../profile.png';
 @connect(
     // Map state to props
@@ -33,11 +36,27 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
         console.log(23423)
         console.log(this.props.location)
 
+        const styles = {            
+            largeIcon: {
+              width: 60,
+              height: 60,
+            },
+            large: {
+              width: 120,
+              height: 120,
+              padding: 30,
+            }
+          };
+
         const { challenges, location } = this.props
         return (
             <Card>
                 <CardMedia className={CSS.profilePhoto}>
-                    <img src={location.payload.foto} alt="" />
+                    <img src={location.payload.foto} alt="" />                    
+                </CardMedia>
+                <br />
+                <CardMedia className={CSS.MarkerProfile}>
+                    <img src={require("../gamecoin_marker_large.png")} alt="" />                    
                 </CardMedia>
                 <br />
                 <div>

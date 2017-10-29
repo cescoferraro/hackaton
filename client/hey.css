@@ -26,6 +26,7 @@ h2{margin:0;}
     max-height: calc(50vh - 64px);
     overflow: auto;
 }
+
 .content{
     background-color: white;
     height: calc(100vh - 64px); 
@@ -88,4 +89,20 @@ h2{margin:0;}
 	width:25vh!important;
 	height:25vh;
     }
+
+}
+.MarkerProfile{
+    float: right;
+    padding-top: 10px;
+    margin-right: 10%;
+    div {
+	width:10vh!important;
+	height:15vh;
+    }
+
+}
+.IconMap{
+    float: right;
+    size: 50;
+    margin-right:10%; 
 }
