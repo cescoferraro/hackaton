@@ -14,6 +14,8 @@ import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
 import { MyMapComponent } from "./map"
 import Home from "./home"
+import Profile from "./profile/index";
+
 import Login from "./login"
 import ReduxToastr from 'react-redux-toastr'
 import RegisterComponent from "./register";
@@ -74,7 +76,20 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                 content = <Login />
                 break;
             case "PROFILE":
-                content = <h1>USER: {this.props.userId}</h1>
+                content = content =  <div>
+                {
+                    !isLoaded(this.props.challenges)
+                        ? 'Loading'
+                        : isEmpty(this.props.challenges)
+                            ? 'Todo list is empty'
+                            : (
+                                
+                                    <Profile
+                                    
+                                    /> 
+                            )
+                }                    
+            </div>
                 break;
             case "REGISTER":
                 content = <div><RegisterComponent/></div>
