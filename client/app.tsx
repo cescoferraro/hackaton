@@ -16,6 +16,8 @@ import { MyMapComponent } from "./map"
 import Home from "./home"
 import Login from "./login"
 import ReduxToastr from 'react-redux-toastr'
+import RegisterComponent from "./register";
+
 @firebaseConnect([{ path: 'challenges' }])
 @connect(
     (state) => {
@@ -73,6 +75,9 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                 break;
             case "PROFILE":
                 content = <h1>USER: {this.props.userId}</h1>
+                break;
+            case "REGISTER":
+                content = <div><RegisterComponent/></div>
                 break;
             default:
                 content = <h1>not found</h1>
