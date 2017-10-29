@@ -14,36 +14,32 @@ import FileFolder from 'material-ui/svg-icons/file/folder';
 import FontIcon from 'material-ui/FontIcon';
 import TextField from 'material-ui/TextField';
 //import avatarPicture from '../profile.png';
-
-export default class Profile extends React.Component<{ challenges?: any, lat?: any, long?: any }, {}> {
+@connect(
+    // Map state to props
+    ({ firebase }) => ({
+        authError: pathToJS(firebase, 'authError'),
+        auth: pathToJS(firebase, 'auth'),
+        profile: pathToJS(firebase, 'profile')
+    })
+)
+export default class Profile extends React.Component<{ auth?: any, challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) {
         super(props)
     }
     render() {
         console.log(23423)
+        console.log(this.props)
         const { challenges } = this.props
         return (
-
-            // <List>
-            // <ListItem
-            //   disabled={true}
-            //   leftAvatar={
-            //     <Avatar src= {""} />
-            //   }
-            // >
-            //   Image Avatar
-            // </ListItem>
-            // </List>
-
- <div>
-<br />
-<TextField
-  value="Nome"
-  hintText=""
-  floatingLabelText="Nome"
-  disabled ={true}
-/><br />
-</div>
+            <div>
+                <br />
+                <TextField
+                    value={this.props.auth.email}
+                    hintText=""
+                    floatingLabelText="Nome"
+                    disabled={true}
+                /><br />
+            </div>
 
 
         )

@@ -76,20 +76,20 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                 content = <Login />
                 break;
             case "PROFILE":
-                content = content =  <div>
-                {
-                    !isLoaded(this.props.challenges)
-                        ? 'Loading'
-                        : isEmpty(this.props.challenges)
-                            ? 'Todo list is empty'
-                            : (
-                                
+                content = content = <div>
+                    {
+                        !isLoaded(this.props.challenges)
+                            ? 'Loading'
+                            : isEmpty(this.props.challenges)
+                                ? 'Todo list is empty'
+                                : (
+
                                     <Profile
-                                    
-                                    /> 
-                            )
-                }                    
-            </div>
+
+                                    />
+                                )
+                    }
+                </div>
                 break;
             case "REGISTER":
                 content = <div><RegisterComponent/></div>
@@ -100,7 +100,9 @@ export default class App extends React.Component<{ location?: any, userId?: stri
         }
         return <div>
             <MyAppBar />
-            {content}
+            <div >
+                {content}
+            </div>
             <ReduxToastr
                 timeOut={4000}
                 newestOnTop={false}

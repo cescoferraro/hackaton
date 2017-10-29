@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 
 export default connect()(({ dispatch }) => <AppBar
-    title="Title"
+    title="GameCoin"
     onTitleTouchTap={() => { dispatch({ type: "HOME" }) }}
     iconElementRight={
         <FlatButton

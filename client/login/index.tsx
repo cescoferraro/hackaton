@@ -4,6 +4,10 @@ import RaisedButton from 'material-ui/RaisedButton'
 import { Provider, connect } from 'react-redux'
 import { getFirebase } from 'react-redux-firebase'
 import { toastr } from 'react-redux-toastr'
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+
+import * as CSS from "../hey.css"
 @connect()
 export default class Login extends React.Component<{ dispatch?: any }, { email: string, password: string }>{
     constructor(props) {
@@ -28,36 +32,39 @@ export default class Login extends React.Component<{ dispatch?: any }, { email: 
     };
     render() {
         return (
-            <div>
-                <h2>{this.state.email}</h2>
-                <TextField
-                    hintText="Hint Text"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                /><br />
-                <br />
-                <h2>{this.state.password}</h2>
-                <TextField
-                    value={this.state.password}
-                    onChange={this.handleChangePassword}
-                    hintText="The hint text can be as long as you want, it will wrap."
-                /><br />
+            <div className={CSS.content} >
+                <Card className={CSS.login}>
+                    <TextField
+                        hintText="Hint Text"
+                        type="email"
+                        fullWidth={true}
+                        value={this.state.email}
+                        floatingLabelText="Email"
+                        onChange={this.handleChange}
+                    />
+                    <TextField
+                        fullWidth={true}
+                        floatingLabelText="Password"
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.handleChangePassword}
+                        hintText="The hint text can be as long as you want, it will wrap."
+                    /><br />
 
-                <RaisedButton onClick={() => {
-                    getFirebase().auth()
-                        .signInWithEmailAndPassword(this.state.email, this.state.password)
-                        .then(() => {
-                            this.props.dispatch({ type: 'PROFILE' })
-                            toastr.success('LOGIN', 'Success')
-                            console.log(99)
-                        })
-                        .catch(() => {
-                            toastr.error('LOGIN', 'Wrong user/password')
+                    <RaisedButton onClick={() => {
+                        getFirebase().auth()
+                            .signInWithEmailAndPassword(this.state.email, this.state.password)
+                            .then((hy) => {
+                                this.props.dispatch({ type: 'PROFILE' })
+                                toastr.success('LOGIN', 'Success')
+                                console.log(hy)
+                            })
+                            .catch(() => {
+                                toastr.error('LOGIN', 'Wrong user/password')
 
-                        })
-
-
-                }} label="Secondary" secondary={true} />
+                            })
+                    }} label="Secondary" secondary={true} />
+                </Card>
             </div>
         )
     }

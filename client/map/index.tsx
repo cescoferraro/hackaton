@@ -55,19 +55,19 @@ export const MyMapComponent = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `400px` }} />,
+        containerElement: <div style={{ height: `50vh` }} />,
         mapElement: <div style={{ height: `100%` }} />,
     }),
     withScriptjs,
     withGoogleMap
 )((props) =>
     <GoogleMap
-        defaultZoom={2}
+        defaultZoom={15}
         defaultCenter={{ lat: props.lat, lng: props.long }}
     >
 
         {
-            Object.keys(props.challenges).map((key) => (1000 * distance(props.lat, props.long, props.challenges[key].lat, props.challenges[key].long)) < 500 ? (
+            Object.keys(props.challenges).map((key) => (1000 * distance(props.lat, props.long, props.challenges[key].lat, props.challenges[key].long)) < 5000 ? (
                 <Markerss challenge={props.challenges[key]} id={key} key={key} ></Markerss>) : null)}
     </GoogleMap>
     )

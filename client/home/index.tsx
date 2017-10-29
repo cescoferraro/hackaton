@@ -15,6 +15,7 @@ import Avatar from 'material-ui/Avatar';
 import { MyMapComponent } from "../map"
 declare var require: any
 import { distance } from "../../shared/shared"
+import Paper from 'material-ui/Paper';
 
 export default class Home extends React.Component<{ challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) {
@@ -23,20 +24,20 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
     render() {
         console.log(23423)
         const { challenges } = this.props
-        return (<div>
-            {
-                <div className={CSS.test} >
-                    <MyMapComponent lat={this.props.lat} long={this.props.long} challenges={this.props.challenges} isMarkerShown />
+        return (
+            <div className={CSS.test} >
+                <MyMapComponent lat={this.props.lat} long={this.props.long} challenges={this.props.challenges} isMarkerShown />
+                <Paper className={CSS.list} >
                     <List>
                         {
                             Object.keys(this.props.challenges).map((key) => {
-                                return (1000 * distance(this.props.lat, this.props.long, challenges[key].lat, challenges[key].long)) < 500 ? (
+                                return (1000 * distance(this.props.lat, this.props.long, challenges[key].lat, challenges[key].long)) < 5000 ? (
                                     <ListItem
-                                        leftAvatar={<Avatar src="images/raquelromanp-128.jpg" />}
+                                        leftAvatar={<Avatar src={this.props.challenges[key].logo} />}
                                         key={key}
                                         primaryText={this.props.challenges[key].name}
-                                        secondaryText={
-                                            <p>
+                                       secondaryText={
+                                                                                                            <p>
                                                 <span >{this.props.challenges[key].company}</span>
                                                 <br />
                                             </p>
@@ -46,9 +47,8 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
                                 ) : null
                             })}
                     </List>
-                </div>
-            }
-
-        </div>)
+                </Paper>
+            </div>
+        )
     }
 }
