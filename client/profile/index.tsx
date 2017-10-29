@@ -40,7 +40,9 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
                     <img src={location.payload.foto} alt="" />
                 </CardMedia>
                 <br />
+                <div>
                 <TextField
+                    style={{padding: 10}}
                     value={location.payload.name}
                     hintText=""
                     floatingLabelText="Nome"
@@ -48,13 +50,15 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
                     disabled={true}
                 /><br />
                 <TextField
+                    style={{padding: 10}}
                     value={location.payload.email}
                     hintText=""
                     fullWidth={true}
-                    floatingLabelText="Nome"
+                    floatingLabelText="Email"
                     disabled={true}
                 /><br />
                 <TextField
+                    style={{padding: 10}}
                     value={location.payload.kind}
                     hintText=""
                     fullWidth={true}
@@ -62,6 +66,7 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
                     disabled={true}
                 /><br />
                 <TextField
+                    style={{padding: 10}}
                     value={location.payload.moedas}
                     type="number"
                     hintText=""
@@ -69,6 +74,7 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
                     floatingLabelText="Moedas"
                     disabled={true}
                 /><br />
+                </div>
             </Card>
 
 
