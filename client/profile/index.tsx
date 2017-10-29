@@ -58,6 +58,10 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         <img src={this.props.user.foto} alt="" />
                     </CardMedia>
                     <br />
+                    <CardMedia className={CSS.MarkerProfile}>
+                    <img src={require("../gamecoin_marker_large.png")} alt="" />                    
+                    </CardMedia>
+                    <br />
                     <div>
                         <TextField
                             style={{ padding: 10 }}
