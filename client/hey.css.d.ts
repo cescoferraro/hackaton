@@ -7,3 +7,4 @@ export const list: string
 export const coin: string
 export const price: string
 export const pedra: string
+export const logoLogin: string

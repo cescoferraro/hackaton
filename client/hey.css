@@ -56,3 +56,10 @@ h2{margin:0;}
     }
 
 }
+.logoLogin{
+    background-color:white;
+    height: 25vh;
+    width: 48vh;
+    padding-left: 1.5%;
+    padding-top: 1%;
+}
