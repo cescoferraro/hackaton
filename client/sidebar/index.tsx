@@ -26,8 +26,10 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                 docked={false}
                 onRequestChange={(open) => { this.props.dispatch({ type: "TOOGLE_SIDEBAR" }) }}
                 open={this.props.open} >
-                {!this.props.auth ?
+                {this.props.user.name === "joe doe" ?
                     <RaisedButton
+                        style={{ display: 'flex', alignContent: 'center', alignItems: 'center', margin: 20 }}
+                        buttonStyle={{ backgroundColor: '#00BCD4' }}
                         onClick={() => {
                             this.props.dispatch({ type: "LOGIN" })
                             this.props.dispatch({ type: "TOOGLE_SIDEBAR" })
@@ -41,11 +43,10 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                 <br />
                 <br />
                 <br />
-                <br />
-                {this.props.auth ? <List>
-                    <ListItem primaryText={this.props.user.name} leftIcon={<ContentInbox />} />
-                    <ListItem primaryText={this.props.user.moedas + " Moedas"} leftIcon={<ActionGrade />} />
+                {this.props.user.name === "joe doe" ? <List>
                 </List> : <List>
+                        <ListItem primaryText={this.props.user.name} leftIcon={<ContentInbox />} />
+                        <ListItem primaryText={this.props.user.moedas + " Moedas"} leftIcon={<ActionGrade />} />
                     </List>
                 }
             </Drawer>

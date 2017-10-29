@@ -20,7 +20,9 @@ import CommunicationEmail from 'material-ui/svg-icons/communication/email';
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 const coin = require("../../public/coin.png")
 
-export default class Home extends React.Component<{ challenges?: any, lat?: any, long?: any }, {}> {
+
+@connect()
+export default class Home extends React.Component<{ dispatch?: any, challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) { super(props) }
     render() {
         console.log(23423)
@@ -34,6 +36,7 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
                             Object.keys(this.props.challenges).map((key) => {
                                 return (1000 * distance(this.props.lat, this.props.long, challenges[key].lat, challenges[key].long)) < 5000 ? (
                                     <ListItem
+                                        onClick={() => this.props.dispatch({ type: 'CHALLENGE', payload: { id: key } })}
                                         leftAvatar={<Avatar src={this.props.challenges[key].logo} />}
                                         key={key}
                                         primaryText={this.props.challenges[key].name}

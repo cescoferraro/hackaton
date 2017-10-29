@@ -7,3 +7,10 @@ export const distance = (lat1, lon1, lat2, lon2) => {
 
     return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
+export const initialUser = {
+    name: "joe doe",
+    kind: "USER",
+    foto: "http://www.planystech.com/wp-content/uploads/2017/03/profile-placeholder.jpg",
+    moedas: 847234,
+    email: "Joe doe"
+}
