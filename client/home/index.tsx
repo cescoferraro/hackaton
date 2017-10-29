@@ -21,9 +21,7 @@ import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bu
 const coin = require("../../public/coin.png")
 
 export default class Home extends React.Component<{ challenges?: any, lat?: any, long?: any }, {}> {
-    constructor(props) {
-        super(props)
-    }
+    constructor(props) { super(props) }
     render() {
         console.log(23423)
         const { challenges } = this.props
@@ -45,17 +43,13 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
                                                 <br />
                                             </p>
                                         }
-                                        rightAvatar={<div className={CSS.pedra}>
-
-                                            <img className={CSS.coin} alt="" src={coin} />
-                                            <div className={CSS.price}>
-                                                {this.props.challenges[key].award}
-                                            </div>
-                                        </div>}
-
-
-
-
+                                        rightAvatar={
+                                            <div className={CSS.pedra}>
+                                                <img className={CSS.coin} alt="" src={coin} />
+                                                <div className={CSS.price}>
+                                                    {this.props.challenges[key].award}
+                                                </div>
+                                            </div>}
                                         secondaryTextLines={2}
                                     />
                                 ) : null
