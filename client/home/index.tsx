@@ -45,7 +45,7 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
                                                 <br />
                                             </p>
                                         }
-                                        rightAvatar={<div >
+                                        rightAvatar={<div className={CSS.pedra}>
 
                                             <img className={CSS.coin} alt="" src={coin} />
                                             <div className={CSS.price}>

@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 
 export default connect()(({ dispatch }) => <AppBar
     title="GameCoin"
+    onLeftIconButtonTouchTap={() => { dispatch({ type: "TOOGLE_SIDEBAR" }) }}
     onTitleTouchTap={() => { dispatch({ type: "HOME" }) }}
     iconElementRight={
         <FlatButton

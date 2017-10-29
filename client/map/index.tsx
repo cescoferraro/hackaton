@@ -6,7 +6,8 @@ import Link from 'redux-first-router-link'
 declare var google: any;
 import { connect } from 'react-redux'
 /* const svg = "https://trello-attachments.s3.amazonaws.com/59f4f0b6d4ebbe42bd9b41ba/300x490/283b282e4347b662a0392691b6fc384f/gamecoin_marker.png"*/
-const svg = "https://trello-attachments.s3.amazonaws.com/59f496c8e68c2ace90c394d8/59f4f0b6d4ebbe42bd9b41ba/58509de69c993f840231fc9a72d7a753/gamecoin_marker.png"
+declare var require: any;
+const svg = require("./marker.png")
 @connect()
 class Markerss extends React.Component<{ challenge: any, dispatch?: any, id: string }, { open: boolean }>{
     constructor(props) {

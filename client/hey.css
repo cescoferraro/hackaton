@@ -40,13 +40,19 @@ h2{margin:0;}
     height: 50vh;
     width: 50vh;
 }
-.coin{
-    width: 30px;
-    height: 30px;
+.pedra{
+    display: flex;
+    .coin{
+	width: 30px;
+	height: 30px;
 
-}
-.price{
-    width: 30px;
-    height: 30px;
+    }
+    .price{
+	font-weight: 900;
+	font-size: medium;
+	width: 30px;
+	height: 30px;
+
+    }
 
 }

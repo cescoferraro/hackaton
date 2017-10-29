@@ -8,3 +8,11 @@ export const challengeReducer = (state = null, action: { type: string; payload: 
     }
 }
 
+export const sideBarReducer = (state = false, action: { type: string }) => {
+    switch (action.type) {
+        case "TOOGLE_SIDEBAR":
+            return !state
+        default:
+            return state
+    }
+}

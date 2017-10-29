@@ -19,7 +19,7 @@ import Profile from "./profile/index";
 import Login from "./login"
 import ReduxToastr from 'react-redux-toastr'
 import RegisterComponent from "./register";
-
+import SideBar from "./sidebar"
 @firebaseConnect([{ path: 'challenges' }])
 @connect(
     (state) => {
@@ -27,11 +27,12 @@ import RegisterComponent from "./register";
         return ({
             challenges: dataToJS(state.firebase, 'challenges'),
             userId: state.userId,
+            sidebar: state.sidebar,
             location: state.location
         })
     }
 )
-export default class App extends React.Component<{ location?: any, userId?: string, onClick?: any, challenges?: any }, { lat: any, long: any }> {
+export default class App extends React.Component<{ sidebar?: boolean, location?: any, userId?: string, onClick?: any, challenges?: any }, { lat: any, long: any }> {
     constructor(props) {
         super(props)
         this.state = { lat: 0, long: 0 }
@@ -103,6 +104,7 @@ export default class App extends React.Component<{ location?: any, userId?: stri
             <div >
                 {content}
             </div>
+            <SideBar open={this.props.sidebar} />
             <ReduxToastr
                 timeOut={4000}
                 newestOnTop={false}
