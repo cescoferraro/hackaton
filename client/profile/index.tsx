@@ -58,9 +58,9 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         <img src={this.props.user.foto} alt="" />
                     </CardMedia>
                     <br />
-                    <CardMedia className={CSS.MarkerProfile}>
+                    <a href="/"><CardMedia className={CSS.MarkerProfile}>
                     <img src={require("../gamecoin_marker_large.png")} alt="" />                    
-                    </CardMedia>
+                    </CardMedia></a>
                     <br />
                     <div>
                         <TextField
