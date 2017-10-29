@@ -26,7 +26,7 @@ class Markerss extends React.Component<{ challenge: any, dispatch?: any, id: str
             position={{ lat: this.props.challenge.lat, lng: this.props.challenge.long }}
             labelAnchor={new google.maps.Point(0, 0)}
             labelStyle={{ backgroundColor: "white", fontSize: "32px", padding: "16px" }}
-            onClick={() => { go() }}
+            onClick={() => { window.location.href = 'https://www.facebook.com/events/1966359860302568/?context=create&previousaction=create&ref=46&source=2&sid_create=2374811930&action_history=[%7B%22mechanism%22%3A%22bookmarks%22%2C%22surface%22%3A%22bookmarks_menu%22%2C%22extra_data%22%3A%22[]%22%7D%2C%7B%22mechanism%22%3A%22main_list%22%2C%22surface%22%3A%22dashboard%22%2C%22extra_data%22%3A%22%7B%5C%22dashboard_filter%5C%22%3A%5C%22upcoming%5C%22%7D%22%7D%2C%7B%22surface%22%3A%22create_dialog%22%2C%22mechanism%22%3A%22user_create_dialog%22%2C%22extra_data%22%3A[]%7D]&has_source=1' }}
             icon={{
                 url: svg
             }}
