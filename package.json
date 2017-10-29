@@ -6,11 +6,12 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --env.production",
-    "start": "webpack-dev-server"
+    "start": "cross-env NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
     "@types/react": "^16.0.18",
     "awesome-typescript-loader": "^3.2.3",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "extract-css-chunks-webpack-plugin": "^2.0.17",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -39,6 +40,7 @@
     "react-jss": "^7.2.0",
     "react-redux": "^5.0.6",
     "react-redux-firebase": "^1.5.1",
+    "react-redux-toastr": "^7.1.6",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",

@@ -13,16 +13,9 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
 import { MyMapComponent } from "../map"
+declare var require: any
+import { distance } from "../../shared/shared"
 
-function distance(lat1, lon1, lat2, lon2) {
-    var p = 0.017453292519943295;    // Math.PI / 180
-    var c = Math.cos;
-    var a = 0.5 - c((lat2 - lat1) * p) / 2 +
-        c(lat1 * p) * c(lat2 * p) *
-        (1 - c((lon2 - lon1) * p)) / 2;
-
-    return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
-}
 export default class Home extends React.Component<{ challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) {
         super(props)

@@ -26,10 +26,14 @@ let config = {
 
 const reduxFirebaseConfig = { userProfile: 'users' }
 const createStoreWithFirebase = compose(reactReduxFirebase(config, reduxFirebaseConfig))(createStore)
+import { reducer as toastrReducer } from 'react-redux-toastr'
 const history = createHistory()
 const { reducer, middleware, enhancer } = connectRoutes(history, routesMap) // yes, 3 redux aspects
 const rootReducer = combineReducers({
-    location: reducer, firebase: firebaseStateReducer, challangeId: challengeReducer
+    toastr: toastrReducer,
+    location: reducer,
+    firebase: firebaseStateReducer,
+    challangeId: challengeReducer
 })
 const middlewares = composeWithDevTools(applyMiddleware(middleware))
 export default createStoreWithFirebase(rootReducer, compose(enhancer, middlewares))

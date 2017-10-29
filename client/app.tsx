@@ -14,7 +14,8 @@ import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
 import { MyMapComponent } from "./map"
 import Home from "./home"
-
+import Login from "./login"
+import ReduxToastr from 'react-redux-toastr'
 @firebaseConnect([{ path: 'challenges' }])
 @connect(
     (state) => {
@@ -47,7 +48,7 @@ export default class App extends React.Component<{ location?: any, userId?: stri
         let content;
         switch (this.props.location.type) {
             case "HOME":
-                content =  <div>
+                content = <div>
                     {
                         !isLoaded(this.props.challenges)
                             ? 'Loading'
@@ -61,14 +62,14 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                                             challenges={this.props.challenges}
                                         /> : <h2>We need you to enable geoloation</h2>
                                 )
-                    }                    
+                    }
                 </div>
                 break;
             case "CHALLENGE":
                 content = <h1>Challange</h1>
                 break;
             case "LOGIN":
-                content = <h1>Login</h1>
+                content = <Login />
                 break;
             case "PROFILE":
                 content = <h1>USER: {this.props.userId}</h1>
@@ -76,8 +77,20 @@ export default class App extends React.Component<{ location?: any, userId?: stri
             default:
                 content = <h1>not found</h1>
                 break;
-        }    
-        return <div><MyAppBar/>{content}</div>
+        }
+        return <div>
+            <MyAppBar />
+            {content}
+            <ReduxToastr
+                timeOut={4000}
+                newestOnTop={false}
+                preventDuplicates
+                position="top-left"
+                transitionIn="fadeIn"
+                transitionOut="fadeOut"
+                progressBar />
+
+        </div>
     }
 }
 
