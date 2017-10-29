@@ -9,4 +9,5 @@ export const price: string
 export const pedra: string
 export const logoLogin: string
 export const work: string
+export const profile: string
 export const profilePhoto: string

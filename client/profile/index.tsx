@@ -18,14 +18,16 @@ import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/
 //import avatarPicture from '../profile.png';
 @connect(
     // Map state to props
-    ({ firebase, location }) => ({
-        authError: pathToJS(firebase, 'authError'),
-        auth: pathToJS(firebase, 'auth'),
-        location,
-        profile: pathToJS(firebase, 'profile')
-    })
+    ({
+        firebase, location, user }) => ({
+            authError: pathToJS(firebase, 'authError'),
+            auth: pathToJS(firebase, 'auth'),
+            user,
+            location,
+            profile: pathToJS(firebase, 'profile')
+        })
 )
-export default class Profile extends React.Component<{ location?: any, auth?: any, challenges?: any, lat?: any, long?: any }, {}> {
+export default class Profile extends React.Component<{ user?: any, location?: any, auth?: any, challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) {
         super(props)
     }
@@ -35,47 +37,49 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
 
         const { challenges, location } = this.props
         return (
-            <Card>
-                <CardMedia className={CSS.profilePhoto}>
-                    <img src={location.payload.foto} alt="" />
-                </CardMedia>
-                <br />
-                <div>
-                <TextField
-                    style={{padding: 10}}
-                    value={location.payload.name}
-                    hintText=""
-                    floatingLabelText="Nome"
-                    fullWidth={true}
-                    disabled={true}
-                /><br />
-                <TextField
-                    style={{padding: 10}}
-                    value={location.payload.email}
-                    hintText=""
-                    fullWidth={true}
-                    floatingLabelText="Email"
-                    disabled={true}
-                /><br />
-                <TextField
-                    style={{padding: 10}}
-                    value={location.payload.kind}
-                    hintText=""
-                    fullWidth={true}
-                    floatingLabelText="Tipo"
-                    disabled={true}
-                /><br />
-                <TextField
-                    style={{padding: 10}}
-                    value={location.payload.moedas}
-                    type="number"
-                    hintText=""
-                    fullWidth={true}
-                    floatingLabelText="Moedas"
-                    disabled={true}
-                /><br />
-                </div>
-            </Card>
+            <div style={{ overflowX: 'hidden', overflowY: 'auto' }}>
+                <Card className={CSS.profile}>
+                    <CardMedia className={CSS.profilePhoto}>
+                        <img src={this.props.user.foto} alt="" />
+                    </CardMedia>
+                    <br />
+                    <div>
+                        <TextField
+                            style={{ padding: 10 }}
+                            value={this.props.user.name}
+                            hintText=""
+                            floatingLabelText="Nome"
+                            fullWidth={true}
+                            disabled={true}
+                        /><br />
+                        <TextField
+                            style={{ padding: 10 }}
+                            value={this.props.user.email}
+                            hintText=""
+                            fullWidth={true}
+                            floatingLabelText="Email"
+                            disabled={true}
+                        /><br />
+                        <TextField
+                            style={{ padding: 10 }}
+                            value={this.props.user.kind}
+                            hintText=""
+                            fullWidth={true}
+                            floatingLabelText="Tipo"
+                            disabled={true}
+                        /><br />
+                        <TextField
+                            style={{ padding: 10 }}
+                            value={this.props.user.moedas}
+                            type="number"
+                            hintText=""
+                            fullWidth={true}
+                            floatingLabelText="Moedas"
+                            disabled={true}
+                        /><br />
+                    </div>
+                </Card>
+            </div>
 
 
         )

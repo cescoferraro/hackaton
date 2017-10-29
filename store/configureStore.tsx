@@ -11,7 +11,7 @@ import createHistory from 'history/createBrowserHistory'
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase'
 import { challengeReducer } from "./reducers"
 import { routesMap } from "../client/routes"
-import { sideBarReducer } from "./reducers"
+import { sideBarReducer, currentUserReducer } from "./reducers"
 
 
 let config = {
@@ -30,6 +30,7 @@ import { reducer as toastrReducer } from 'react-redux-toastr'
 const history = createHistory()
 const { reducer, middleware, enhancer } = connectRoutes(history, routesMap) // yes, 3 redux aspects
 const rootReducer = combineReducers({
+    user: currentUserReducer,
     sidebar: sideBarReducer,
     toastr: toastrReducer,
     location: reducer,

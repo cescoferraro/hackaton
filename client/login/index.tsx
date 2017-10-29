@@ -71,6 +71,7 @@ export default class Login extends React.Component<{ dispatch?: any }, { regular
                                         console.log(input.val())
                                         Object.keys(input.val()).map((key) => {
                                             if (input.val()[key].email === this.state.email && input.val()[key].password === this.state.password) {
+                                                this.props.dispatch({ type: "SET_CURRENT_USER", payload: input.val()[key] })
                                                 this.props.dispatch({ type: "PROFILE", payload: input.val()[key] })
                                             }
 
