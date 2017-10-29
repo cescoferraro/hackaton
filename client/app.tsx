@@ -92,7 +92,7 @@ export default class App extends React.Component<{ location?: any, userId?: stri
                 </div>
                 break;
             case "REGISTER":
-                content = <div><RegisterComponent/></div>
+                content = <div><RegisterComponent /></div>
                 break;
             default:
                 content = <h1>not found</h1>

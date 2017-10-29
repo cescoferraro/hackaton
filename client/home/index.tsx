@@ -16,6 +16,9 @@ import { MyMapComponent } from "../map"
 declare var require: any
 import { distance } from "../../shared/shared"
 import Paper from 'material-ui/Paper';
+import CommunicationEmail from 'material-ui/svg-icons/communication/email';
+import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
+const coin = require("../../public/coin.png")
 
 export default class Home extends React.Component<{ challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) {
@@ -36,12 +39,23 @@ export default class Home extends React.Component<{ challenges?: any, lat?: any,
                                         leftAvatar={<Avatar src={this.props.challenges[key].logo} />}
                                         key={key}
                                         primaryText={this.props.challenges[key].name}
-                                       secondaryText={
-                                                                                                            <p>
+                                        secondaryText={
+                                            <p>
                                                 <span >{this.props.challenges[key].company}</span>
                                                 <br />
                                             </p>
                                         }
+                                        rightAvatar={<div >
+
+                                            <img className={CSS.coin} alt="" src={coin} />
+                                            <div className={CSS.price}>
+                                                {this.props.challenges[key].award}
+                                            </div>
+                                        </div>}
+
+
+
+
                                         secondaryTextLines={2}
                                     />
                                 ) : null
