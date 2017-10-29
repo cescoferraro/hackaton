@@ -15,3 +15,6 @@ export const IconMap: string
 export const MarkerProfile: string
 export const listMarker: string
 export const desc: string
+export const priceMarker: string
+export const pedraMarker: string
+export const coinMarker: string
