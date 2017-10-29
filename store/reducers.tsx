@@ -16,8 +16,8 @@ export const sideBarReducer = (state = false, action: { type: string }) => {
             return state
     }
 }
-
-export const currentUserReducer = (state = { name: "joe doe", moedas: 847234, email: "Joe doe" }, action: { type: string, payload: any }) => {
+import { initialUser } from "../shared/shared"
+export const currentUserReducer = (state = initialUser, action: { type: string, payload: any }) => {
     switch (action.type) {
         case "SET_CURRENT_USER":
             return action.payload
