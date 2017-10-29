@@ -26,6 +26,7 @@ h2{margin:0;}
     max-height: calc(50vh - 64px);
     overflow: auto;
 }
+
 .content{
     background-color: white;
     height: calc(100vh - 64px); 
@@ -91,4 +92,11 @@ h2{margin:0;}
 	width:25vh!important;
 	height:25vh;
     }
+
+}
+
+.IconMap{
+    float: right;
+    size: 50;
+    margin-right:10%; 
 }

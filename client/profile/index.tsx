@@ -15,6 +15,9 @@ import FileFolder from 'material-ui/svg-icons/file/folder';
 import FontIcon from 'material-ui/FontIcon';
 import TextField from 'material-ui/TextField';
 import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/Card';
+import IconButton from 'material-ui/IconButton';
+import MapsPlace from 'material-ui/svg-icons/maps/place';
+
 //import avatarPicture from '../profile.png';
 @connect(
     // Map state to props
@@ -35,6 +38,18 @@ export default class Profile extends React.Component<{ user?: any, location?: an
         console.log(23423)
         console.log(this.props.location)
 
+        const styles = {            
+            largeIcon: {
+              width: 60,
+              height: 60,
+            },
+            large: {
+              width: 120,
+              height: 120,
+              padding: 30,
+            }
+          };
+
         const { challenges, location } = this.props
         return (
             <div style={{ overflowX: 'hidden', overflowY: 'auto' }}>
@@ -43,37 +58,30 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         <img src={this.props.user.foto} alt="" />
                     </CardMedia>
                     <br />
+                    
                     <div>
                         <TextField
-                            style={{ padding: 10 }}
+                            style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
                             value={this.props.user.name}
                             hintText=""
                             floatingLabelText="Nome"
-                            fullWidth={true}
+                            fullWidth={false}
                             disabled={true}
                         /><br />
                         <TextField
-                            style={{ padding: 10 }}
+                            style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
                             value={this.props.user.email}
                             hintText=""
-                            fullWidth={true}
+                            fullWidth={false}
                             floatingLabelText="Email"
                             disabled={true}
                         /><br />
                         <TextField
-                            style={{ padding: 10 }}
-                            value={this.props.user.kind}
-                            hintText=""
-                            fullWidth={true}
-                            floatingLabelText="Tipo"
-                            disabled={true}
-                        /><br />
-                        <TextField
-                            style={{ padding: 10 }}
+                            style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
                             value={this.props.user.moedas}
                             type="number"
                             hintText=""
-                            fullWidth={true}
+                            fullWidth={false}
                             floatingLabelText="Moedas"
                             disabled={true}
                         /><br />
