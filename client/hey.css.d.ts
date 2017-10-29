@@ -13,3 +13,5 @@ export const profile: string
 export const profilePhoto: string
 export const IconMap: string
 export const MarkerProfile: string
+export const listMarker: string
+export const desc: string

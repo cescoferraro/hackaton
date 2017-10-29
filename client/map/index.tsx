@@ -5,6 +5,11 @@ import MarkerWithLabel from "react-google-maps/lib/components/addons/MarkerWithL
 import Link from 'redux-first-router-link'
 declare var google: any;
 import { connect } from 'react-redux'
+import * as CSS from "../hey.css"
+import Avatar from 'material-ui/Avatar';
+import Paper from 'material-ui/Paper';
+import { List, ListItem } from 'material-ui/List';
+const coin = require("../../public/coin.png")
 /* const svg = "https://trello-attachments.s3.amazonaws.com/59f4f0b6d4ebbe42bd9b41ba/300x490/283b282e4347b662a0392691b6fc384f/gamecoin_marker.png"*/
 declare var require: any;
 const svg = require("./marker.png")
@@ -20,13 +25,38 @@ class Markerss extends React.Component<{ challenge: any, dispatch?: any, id: str
         return this.state.open ? <MarkerWithLabel
             position={{ lat: this.props.challenge.lat, lng: this.props.challenge.long }}
             labelAnchor={new google.maps.Point(0, 0)}
-            labelStyle={{ backgroundColor: "yellow", fontSize: "32px", padding: "16px" }}
+            labelStyle={{ backgroundColor: "white", fontSize: "32px", padding: "16px" }}
             onClick={() => { go() }}
             icon={{
                 url: svg
             }}
         >
-            <div> {this.props.challenge.name}</div>
+            <div>
+            <Paper className={CSS.listMarker} >
+                             <ListItem
+                                leftAvatar={<Avatar src={this.props.challenge.logo} />}
+                                primaryText={this.props.challenge.name}
+                                secondaryText={
+                                    <p>
+                                        <span >{this.props.challenge.company}</span>
+                                        <br />
+                                    </p>
+                                }
+                                rightAvatar={
+                                    <div className={CSS.pedra}>
+                                        <img className={CSS.coin} alt="" src={coin} />
+                                        <div className={CSS.price}>
+                                            {this.props.challenge.award}
+                                        </div>
+                                    </div>}
+                                secondaryTextLines={2}
+                            />
+                            <p className={CSS.desc}>
+                                {this.props.challenge.desc}
+                            </p>
+        </Paper>
+            </div>
+            
         </MarkerWithLabel> :
             <Marker
                 position={{ lat: this.props.challenge.lat, lng: this.props.challenge.long }}

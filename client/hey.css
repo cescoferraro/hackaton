@@ -26,7 +26,16 @@ h2{margin:0;}
     max-height: calc(50vh - 64px);
     overflow: auto;
 }
-
+.listMarker{
+    height: calc(35vh - 64px);
+    max-height: calc(50vh - 64px);
+    overflow: auto;
+}
+.desc{
+    font-size: small;
+    margin-left: 10px;
+    margin-right: 10px; 
+}
 .content{
     background-color: white;
     height: calc(100vh - 64px); 
@@ -75,7 +84,7 @@ h2{margin:0;}
 	font-size: medium;
 	width: 30px;
 	height: 30px;
-    margin-top: 16px;
+    margin-top: 40px;
     margin-left: 8px;
     }
 
