@@ -1,5 +1,5 @@
 html,body{
-    background-color: white;
+    background-color: #F0F8FF;
     margin:0;
     overflow: hidden;
 }
@@ -8,14 +8,14 @@ html,body{
     background-color: fuchsia;
 }
 .test{
-    background-color: white;
+    background-color: #F0F8FF;
 
     height: 50vh;
     width: 100%;
 }
 h1{margin:0;}
 .register{
-    background-color: white;
+    background-color: #F0F8FF;
     width: 100 vh;
     height: 100vh;
     text-align: center;
@@ -37,7 +37,7 @@ h2{margin:0;}
     margin-right: 10px; 
 }
 .content{
-    background-color: white;
+    background-color: #F0F8FF;
     height: calc(100vh - 64px); 
     width: calc(100vw ); 
     display: flex;
@@ -48,7 +48,7 @@ h2{margin:0;}
 	height: 70vh;
 	width: 50vh;
 	.logoLogin{
-	    background-color:white;
+	    background-color:#F0F8FF;
 	    height: 15vh;
 	    width: 48vh;
 	    padding-left: 1.5%;
