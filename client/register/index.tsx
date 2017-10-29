@@ -1,9 +1,9 @@
 import * as React from 'react';
 import TextField from 'material-ui/TextField';
-import TableGameComponent from '../tableGames';
+import * as CSS from "../hey.css"
 
 const RegisterComponent = () => (
-  <div>
+  <div className={CSS.register}>
     <TextField
     hintText="Nome Completo"
     floatingLabelText="Nome Completo"
@@ -20,7 +20,6 @@ const RegisterComponent = () => (
       type="password"
     /><br />
 
-    <TableGameComponent/>
      </div>
 );
 
