@@ -46,7 +46,7 @@ export default class Login extends React.Component<{ dispatch?: any }, { regular
             <div className={CSS.content} >
 
                 <Card className={CSS.login}>
-                    <CardMedia style={{ marginBottom: 70, marginTop: 10 }} className={CSS.logoLogin}>
+                    <CardMedia style={{ marginBottom: 70, marginTop: 10, backgroundColor:'#FFF' }} className={CSS.logoLogin}>
                         <img src={require("../gamecoin.png")} alt="" />
                     </CardMedia>
                     {this.state.regular ?
