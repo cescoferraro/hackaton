@@ -35,7 +35,7 @@ export default class Profile extends React.Component<{ location?: any, auth?: an
 
         const { challenges, location } = this.props
         return (
-            <Card>
+            <Card style={{display: 'flex'}}>
                 <CardMedia className={CSS.profilePhoto}>
                     <img src={location.payload.foto} alt="" />
                 </CardMedia>
