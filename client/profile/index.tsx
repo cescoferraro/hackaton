@@ -1,3 +1,4 @@
+declare var require: any
 import * as React from "react";
 import MyAppBar from '../bar';
 import { Provider, connect } from 'react-redux'
@@ -13,33 +14,62 @@ import Avatar from 'material-ui/Avatar';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import FontIcon from 'material-ui/FontIcon';
 import TextField from 'material-ui/TextField';
+import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/Card';
 //import avatarPicture from '../profile.png';
 @connect(
     // Map state to props
-    ({ firebase }) => ({
+    ({ firebase, location }) => ({
         authError: pathToJS(firebase, 'authError'),
         auth: pathToJS(firebase, 'auth'),
+        location,
         profile: pathToJS(firebase, 'profile')
     })
 )
-export default class Profile extends React.Component<{ auth?: any, challenges?: any, lat?: any, long?: any }, {}> {
+export default class Profile extends React.Component<{ location?: any, auth?: any, challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) {
         super(props)
     }
     render() {
         console.log(23423)
-        console.log(this.props)
-        const { challenges } = this.props
+        console.log(this.props.location)
+
+        const { challenges, location } = this.props
         return (
-            <div>
+            <Card>
+                <CardMedia className={CSS.profilePhoto}>
+                    <img src={location.payload.foto} alt="" />
+                </CardMedia>
                 <br />
                 <TextField
-                    value={this.props.auth.email}
+                    value={location.payload.name}
                     hintText=""
+                    floatingLabelText="Nome"
+                    fullWidth={true}
+                    disabled={true}
+                /><br />
+                <TextField
+                    value={location.payload.email}
+                    hintText=""
+                    fullWidth={true}
                     floatingLabelText="Nome"
                     disabled={true}
                 /><br />
-            </div>
+                <TextField
+                    value={location.payload.kind}
+                    hintText=""
+                    fullWidth={true}
+                    floatingLabelText="Tipo"
+                    disabled={true}
+                /><br />
+                <TextField
+                    value={location.payload.moedas}
+                    type="number"
+                    hintText=""
+                    fullWidth={true}
+                    floatingLabelText="Moedas"
+                    disabled={true}
+                /><br />
+            </Card>
 
 
         )

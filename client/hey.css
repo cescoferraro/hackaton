@@ -33,13 +33,30 @@ h2{margin:0;}
     display: flex;
     align-items: center;
     justify-content: center;
+    .login{
+	background-color: green;
+	height: 50vh;
+	width: 50vh;
+	.logoLogin{
+	    background-color:white;
+	    height: 15vh;
+	    width: 48vh;
+	    padding-left: 1.5%;
+	    padding-top: 1%;
+	    img {
+		height: 15vh;
+		display: block;
+		max-height:15vh;
+		height: auto;
+	    }
+	}
+	.work{
+	    height:35vh;
+
+	}
+    }
 }
 
-.login{
-    background-color: green;
-    height: 50vh;
-    width: 50vh;
-}
 .pedra{
     display: flex;
     .coin{
@@ -56,10 +73,13 @@ h2{margin:0;}
     }
 
 }
-.logoLogin{
-    background-color:white;
-    height: 25vh;
-    width: 48vh;
-    padding-left: 1.5%;
-    padding-top: 1%;
+
+.profilePhoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+	width:35vh!important;
+	height:35vh;
+    }
 }
