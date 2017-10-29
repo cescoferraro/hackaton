@@ -35,19 +35,20 @@ h2{margin:0;}
     justify-content: center;
     .login{
 	background-color: green;
-	height: 50vh;
+	height: 70vh;
 	width: 50vh;
 	.logoLogin{
 	    background-color:white;
 	    height: 15vh;
 	    width: 48vh;
 	    padding-left: 1.5%;
-	    padding-top: 1%;
+        padding-top: 1%;
 	    img {
-		height: 15vh;
+		height: 25vh;
 		display: block;
-		max-height:15vh;
-		height: auto;
+		max-height:25vh;
+        height: auto;
+        margin-bottom:20vh
 	    }
 	}
 	.work{
