@@ -21,6 +21,24 @@ import * as CSS from "../hey.css"
 }))
 export default class SideBar extends React.Component<{ auth?: any, user?: any, open: boolean, dispatch?: any }, { open: boolean }> {
     render() {
+        const fixed = <div>
+            <ListItem
+                primaryText={"Desafios"}
+                onClick={() => {
+                    this.props.dispatch({ type: "HOME" })
+                    this.props.dispatch({ type: "TOOGLE_SIDEBAR" })
+                }}
+                leftIcon={<ContentInbox />}
+            />
+            <ListItem
+                primaryText={"Profile"}
+                onClick={() => {
+                    this.props.dispatch({ type: "PROFILE" })
+                    this.props.dispatch({ type: "TOOGLE_SIDEBAR" })
+                }}
+                leftIcon={<ActionGrade />}
+            />
+        </div>
         return (
             <Drawer
                 docked={false}
@@ -44,9 +62,11 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                 <br />
                 <br />
                 {this.props.user.name === "joe doe" ? <List>
+                    {fixed}
                 </List> : <List>
                         <ListItem primaryText={this.props.user.name} leftIcon={<ContentInbox />} />
                         <ListItem primaryText={this.props.user.moedas + " Moedas"} leftIcon={<ActionGrade />} />
+                        {fixed}
                     </List>
                 }
             </Drawer>
