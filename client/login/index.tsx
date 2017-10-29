@@ -1,10 +1,11 @@
+declare var require: any
 import * as React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton'
 import { Provider, connect } from 'react-redux'
 import { getFirebase } from 'react-redux-firebase'
 import { toastr } from 'react-redux-toastr'
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
 import * as CSS from "../hey.css"
@@ -33,8 +34,12 @@ export default class Login extends React.Component<{ dispatch?: any }, { email: 
     render() {
         return (
             <div className={CSS.content} >
+
                 <Card className={CSS.login}>
-                    <TextField
+                    <CardMedia className={CSS.logoLogin}>
+                          <img src= {require("../gamecoin.png")} alt="" />
+                    </CardMedia>
+                    <TextField                    
                         hintText="Hint Text"
                         type="email"
                         fullWidth={true}

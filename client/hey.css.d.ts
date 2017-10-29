@@ -6,3 +6,4 @@ export const login: string
 export const list: string
 export const coin: string
 export const price: string
+export const logoLogin: string
