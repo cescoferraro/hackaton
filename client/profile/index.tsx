@@ -64,35 +64,27 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                     <br />
                     <div>
                         <TextField
-                            style={{ padding: 10 }}
+                            style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
                             value={this.props.user.name}
                             hintText=""
                             floatingLabelText="Nome"
-                            fullWidth={true}
+                            fullWidth={false}
                             disabled={true}
                         /><br />
                         <TextField
-                            style={{ padding: 10 }}
+                            style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
                             value={this.props.user.email}
                             hintText=""
-                            fullWidth={true}
+                            fullWidth={false}
                             floatingLabelText="Email"
                             disabled={true}
                         /><br />
                         <TextField
-                            style={{ padding: 10 }}
-                            value={this.props.user.kind}
-                            hintText=""
-                            fullWidth={true}
-                            floatingLabelText="Tipo"
-                            disabled={true}
-                        /><br />
-                        <TextField
-                            style={{ padding: 10 }}
+                            style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
                             value={this.props.user.moedas}
                             type="number"
                             hintText=""
-                            fullWidth={true}
+                            fullWidth={false}
                             floatingLabelText="Moedas"
                             disabled={true}
                         /><br />
