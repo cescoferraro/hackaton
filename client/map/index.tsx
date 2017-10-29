@@ -43,9 +43,9 @@ class Markerss extends React.Component<{ challenge: any, dispatch?: any, id: str
                                     </p>
                                 }
                                 rightAvatar={
-                                    <div className={CSS.pedra}>
-                                        <img className={CSS.coin} alt="" src={coin} />
-                                        <div className={CSS.price}>
+                                    <div className={CSS.pedraMarker}>
+                                        <img className={CSS.coinMarker} alt="" src={coin} />
+                                        <div className={CSS.priceMarker}>
                                             {this.props.challenge.award}
                                         </div>
                                     </div>}
