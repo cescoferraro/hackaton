@@ -6,8 +6,11 @@ import { connect } from 'react-redux'
 import { List, ListItem } from 'material-ui/List';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
+import Done from 'material-ui/svg-icons/action/done';
+import DonutSmall from 'material-ui/svg-icons/action/donut-small';
 import ContentSend from 'material-ui/svg-icons/content/send';
 import ContentDrafts from 'material-ui/svg-icons/content/drafts';
+import Person from 'material-ui/svg-icons/social/person';
 import Divider from 'material-ui/Divider';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 import { firebaseConnect, isLoaded, isEmpty, dataToJS, pathToJS, toJS } from 'react-redux-firebase'
@@ -28,7 +31,7 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                     this.props.dispatch({ type: "HOME" })
                     this.props.dispatch({ type: "TOOGLE_SIDEBAR" })
                 }}
-                leftIcon={<ContentInbox />}
+                leftIcon={<Done />}
             />
             <ListItem
                 primaryText={"Profile"}
@@ -62,10 +65,10 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                 <br />
                 <br />
                 {this.props.user.name === "joe doe" ? <List>
-                    {fixed}
+                    
                 </List> : <List>
-                        <ListItem primaryText={this.props.user.name} leftIcon={<ContentInbox />} />
-                        <ListItem primaryText={this.props.user.moedas + " Moedas"} leftIcon={<ActionGrade />} />
+                        <ListItem primaryText={this.props.user.name} leftIcon={<Person />} />
+                        <ListItem primaryText={this.props.user.moedas + " Moedas"} leftIcon={<DonutSmall />} />
                         {fixed}
                     </List>
                 }
