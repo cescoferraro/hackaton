@@ -62,6 +62,8 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                     <div>
                         <TextField
                             style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
+                            inputStyle={{fontWeight: 'normal', color:'#000'}}
+                            floatingLabelStyle={{fontWeight: '500', color:'#000', fontSize:18}}
                             value={this.props.user.name}
                             hintText=""
                             floatingLabelText="Nome"
@@ -70,6 +72,8 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         /><br />
                         <TextField
                             style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
+                            inputStyle={{fontWeight: 'normal', color:'#000'}}
+                            floatingLabelStyle={{fontWeight: '500', color:'#000', fontSize:18}}
                             value={this.props.user.email}
                             hintText=""
                             fullWidth={false}
@@ -78,6 +82,8 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         /><br />
                         <TextField
                             style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
+                            inputStyle={{fontWeight: 'normal', color:'#000'}}
+                            floatingLabelStyle={{fontWeight: '500', color:'#000', fontSize:18}}
                             value={this.props.user.moedas}
                             type="number"
                             hintText=""
