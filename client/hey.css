@@ -94,16 +94,7 @@ h2{margin:0;}
     }
 
 }
-.MarkerProfile{
-    float: right;
-    padding-top: 10px;
-    margin-right: 10%;
-    div {
-	width:10vh!important;
-	height:15vh;
-    }
 
-}
 .IconMap{
     float: right;
     size: 50;
