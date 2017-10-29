@@ -28,6 +28,8 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                 open={this.props.open} >
                 {this.props.user.name === "joe doe" ?
                     <RaisedButton
+                        style={{ display: 'flex', alignContent: 'center', alignItems: 'center', margin: 20 }}
+                        buttonStyle={{ backgroundColor: '#00BCD4' }}
                         onClick={() => {
                             this.props.dispatch({ type: "LOGIN" })
                             this.props.dispatch({ type: "TOOGLE_SIDEBAR" })
