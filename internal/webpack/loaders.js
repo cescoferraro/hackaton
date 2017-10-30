@@ -62,7 +62,7 @@ const cssHelper = client => {
 const css = (client = false) => {
   const local = [cssHelper(client), postCSS];
   return {
-    test: /\.css$/,
+    test: /\.pcss$/,
     use: client ? ExtractCssChunks.extract({ use: local }) : local
   };
 };
@@ -83,5 +83,5 @@ const typeScript = env => ({
 });
 
 module.exports = env => ({
-    rules: [typeScript(env), css(env), images()]
+  rules: [typeScript(env), css(env), images()]
 });

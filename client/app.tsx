@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MyAppBar from './bar/index';
 import { Provider, connect } from 'react-redux'
 import Link from 'redux-first-router-link'
-import * as CSS from "./hey.css"
+import * as CSS from "./hey.pcss"
 import { firebaseConnect, isLoaded, isEmpty, dataToJS, pathToJS, toJS } from 'react-redux-firebase'
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"

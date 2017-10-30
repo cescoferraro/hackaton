@@ -7,7 +7,7 @@ import { getFirebase } from 'react-redux-firebase'
 import { toastr } from 'react-redux-toastr'
 import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import * as CSS from "../hey.css"
+import * as CSS from "../hey.pcss"
 
 @connect()
 export default class Login extends React.Component<{ dispatch?: any }, { regular: boolean, email: string, password: string }>{
@@ -34,7 +34,7 @@ export default class Login extends React.Component<{ dispatch?: any }, { regular
         const jojo = (
             <RaisedButton
                 style={{ display: 'flex', alignContent: 'center', alignItems: 'center', margin: 10 }}
-                buttonStyle={{backgroundColor: '#00BCD4'}}
+                buttonStyle={{ backgroundColor: '#00BCD4' }}
                 onClick={() => {
                     this.setState({ regular: !this.state.regular })
                 }}
@@ -46,7 +46,7 @@ export default class Login extends React.Component<{ dispatch?: any }, { regular
             <div className={CSS.content} >
 
                 <Card className={CSS.login}>
-                    <CardMedia style={{ marginBottom: 70, marginTop: 10, backgroundColor:'#FFF' }} className={CSS.logoLogin}>
+                    <CardMedia style={{ marginBottom: 70, marginTop: 10, backgroundColor: '#FFF' }} className={CSS.logoLogin}>
                         <img src={require("../gamecoin.png")} alt="" />
                     </CardMedia>
                     {this.state.regular ?
@@ -70,9 +70,9 @@ export default class Login extends React.Component<{ dispatch?: any }, { regular
                                 hintText="The hint text can be as long as you want, it will wrap."
                             /><br />
                             <RaisedButton
-                                style={{ display: 'flex', alignContent: 'center', alignItems: 'center', margin: 10}}
-                                buttonStyle={{backgroundColor: '#00BCD4'}}
-                                
+                                style={{ display: 'flex', alignContent: 'center', alignItems: 'center', margin: 10 }}
+                                buttonStyle={{ backgroundColor: '#00BCD4' }}
+
                                 onClick={() => {
                                     getFirebase().database().ref("users").on("value", (input) => {
                                         console.log(input.val())

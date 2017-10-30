@@ -15,7 +15,7 @@ import Divider from 'material-ui/Divider';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 import { firebaseConnect, isLoaded, isEmpty, dataToJS, pathToJS, toJS } from 'react-redux-firebase'
 import { Card, CardActions, CardHeader, CardText, CardMedia } from 'material-ui/Card';
-import * as CSS from "../hey.css"
+import * as CSS from "../hey.pcss"
 
 @connect(({ firebase, location, user, dispatch }) => ({
     user, dispatch, firebase,
@@ -65,7 +65,7 @@ export default class SideBar extends React.Component<{ auth?: any, user?: any, o
                 <br />
                 <br />
                 {this.props.user.name === "joe doe" ? <List>
-                    
+
                 </List> : <List>
                         <ListItem primaryText={this.props.user.name} leftIcon={<Person />} />
                         <ListItem primaryText={this.props.user.moedas + " Moedas"} leftIcon={<DonutSmall />} />

@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MyAppBar from '../bar';
 import { Provider, connect } from 'react-redux'
 import Link from 'redux-first-router-link'
-import * as CSS from "../hey.css"
+import * as CSS from "../hey.pcss"
 import { firebaseConnect, isLoaded, isEmpty, dataToJS, pathToJS, toJS } from 'react-redux-firebase'
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
@@ -36,7 +36,7 @@ export default class Home extends React.Component<{ dispatch?: any, challenges?:
                             Object.keys(this.props.challenges).map((key) => {
                                 return (1000 * distance(this.props.lat, this.props.long, challenges[key].lat, challenges[key].long)) < 5000 ? (
                                     <ListItem
-                                        onClick={() =>window.location.href = "https://www.facebook.com/events/1966359860302568/?context=create&previousaction=create&ref=46&source=2&sid_create=2374811930&action_history=[%7B%22mechanism%22%3A%22bookmarks%22%2C%22surface%22%3A%22bookmarks_menu%22%2C%22extra_data%22%3A%22[]%22%7D%2C%7B%22mechanism%22%3A%22main_list%22%2C%22surface%22%3A%22dashboard%22%2C%22extra_data%22%3A%22%7B%5C%22dashboard_filter%5C%22%3A%5C%22upcoming%5C%22%7D%22%7D%2C%7B%22surface%22%3A%22create_dialog%22%2C%22mechanism%22%3A%22user_create_dialog%22%2C%22extra_data%22%3A[]%7D]&has_source=1"}
+                                        onClick={() => window.location.href = "https://www.facebook.com/events/1966359860302568/?context=create&previousaction=create&ref=46&source=2&sid_create=2374811930&action_history=[%7B%22mechanism%22%3A%22bookmarks%22%2C%22surface%22%3A%22bookmarks_menu%22%2C%22extra_data%22%3A%22[]%22%7D%2C%7B%22mechanism%22%3A%22main_list%22%2C%22surface%22%3A%22dashboard%22%2C%22extra_data%22%3A%22%7B%5C%22dashboard_filter%5C%22%3A%5C%22upcoming%5C%22%7D%22%7D%2C%7B%22surface%22%3A%22create_dialog%22%2C%22mechanism%22%3A%22user_create_dialog%22%2C%22extra_data%22%3A[]%7D]&has_source=1"}
                                         leftAvatar={<Avatar src={this.props.challenges[key].logo} />}
                                         key={key}
                                         primaryText={this.props.challenges[key].name}

@@ -3,7 +3,7 @@ import * as React from "react";
 import MyAppBar from '../bar';
 import { Provider, connect } from 'react-redux'
 import Link from 'redux-first-router-link'
-import * as CSS from "../hey.css"
+import * as CSS from "../hey.pcss"
 import { firebaseConnect, isLoaded, isEmpty, dataToJS, pathToJS, toJS } from 'react-redux-firebase'
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
@@ -38,17 +38,17 @@ export default class Profile extends React.Component<{ user?: any, location?: an
         console.log(23423)
         console.log(this.props.location)
 
-        const styles = {            
+        const styles = {
             largeIcon: {
-              width: 60,
-              height: 60,
+                width: 60,
+                height: 60,
             },
             large: {
-              width: 120,
-              height: 120,
-              padding: 30,
+                width: 120,
+                height: 120,
+                padding: 30,
             }
-          };
+        };
 
         const { challenges, location } = this.props
         return (
@@ -58,12 +58,12 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         <img src={this.props.user.foto} alt="" />
                     </CardMedia>
                     <br />
-                    
+
                     <div>
                         <TextField
                             style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
-                            inputStyle={{fontWeight: 'normal', color:'#000'}}
-                            floatingLabelStyle={{fontWeight: '500', color:'#000', fontSize:18}}
+                            inputStyle={{ fontWeight: 'normal', color: '#000' }}
+                            floatingLabelStyle={{ fontWeight: '500', color: '#000', fontSize: 18 }}
                             value={this.props.user.name}
                             hintText=""
                             floatingLabelText="Nome"
@@ -72,8 +72,8 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         /><br />
                         <TextField
                             style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
-                            inputStyle={{fontWeight: 'normal', color:'#000'}}
-                            floatingLabelStyle={{fontWeight: '500', color:'#000', fontSize:18}}
+                            inputStyle={{ fontWeight: 'normal', color: '#000' }}
+                            floatingLabelStyle={{ fontWeight: '500', color: '#000', fontSize: 18 }}
                             value={this.props.user.email}
                             hintText=""
                             fullWidth={false}
@@ -82,8 +82,8 @@ export default class Profile extends React.Component<{ user?: any, location?: an
                         /><br />
                         <TextField
                             style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
-                            inputStyle={{fontWeight: 'normal', color:'#000'}}
-                            floatingLabelStyle={{fontWeight: '500', color:'#000', fontSize:18}}
+                            inputStyle={{ fontWeight: 'normal', color: '#000' }}
+                            floatingLabelStyle={{ fontWeight: '500', color: '#000', fontSize: 18 }}
                             value={this.props.user.moedas}
                             type="number"
                             hintText=""
