@@ -31,11 +31,18 @@ import SideBar from "./sidebar"
         return ({
             challenges: dataToJS(state.firebase, 'challenges'),
             sidebar: state.sidebar,
+            user: state.user,
             location: state.location
         })
     }
 )
-export default class App extends React.Component<{ sidebar?: boolean, location?: any, onClick?: any, challenges?: any }, { hey: boolean, lat: any, long: any }> {
+export default class App extends React.Component<{
+    user?: any,
+    sidebar?: boolean,
+    location?: any,
+    onClick?: any,
+    challenges?: any
+}, { hey: boolean, lat: any, long: any }> {
     constructor(props) {
         super(props)
         this.state = { lat: 0, long: 0, hey: false }
@@ -43,7 +50,6 @@ export default class App extends React.Component<{ sidebar?: boolean, location?:
         var QueryURL =
             "https://www.googleapis.com/geolocation/v1/geolocate?key=" +
             GeolocationAPIKey;
-
         Observable.ajax({
             method: "POST",
             url: QueryURL,
@@ -54,46 +60,11 @@ export default class App extends React.Component<{ sidebar?: boolean, location?:
         })
     }
     render() {
-        const geo = () => navigator.geolocation ? true : false
-        let content;
-        switch (this.props.location.type) {
-            case "HOME":
-                content = <HomeLoader challenges={this.props.challenges} lat={this.state.lat} long={this.state.long} />
-                break;
-            case "CHALLENGE":
-                content = <h1>Challange</h1>
-                break;
-            case "LOGIN":
-                content = <Login />
-                break;
-            case "PROFILE":
-                content = content = <div>
-                    {
-                        !isLoaded(this.props.challenges)
-                            ? 'Loading'
-                            : isEmpty(this.props.challenges)
-                                ? 'Todo list is empty'
-                                : (
-
-                                    <Profile
-
-                                    />
-                                )
-                    }
-                </div>
-                break;
-            case "REGISTER":
-                content = <div><RegisterComponent /></div>
-                break;
-            default:
-                content = <h1>not found</h1>
-                break;
-        }
         return (
             <div>
                 <MyAppBar />
                 <div >
-                    {content}
+                    {currentComponet(this.props, this.state)}
                 </div>
                 <SideBar open={this.props.sidebar} />
                 <ReduxToastr
@@ -109,3 +80,26 @@ export default class App extends React.Component<{ sidebar?: boolean, location?:
     }
 }
 
+
+const currentComponet = (props, state) => {
+    switch (props.location.type) {
+        case "HOME":
+            return (
+                <HomeLoader
+                    challenges={props.challenges}
+                    lat={state.lat}
+                    long={state.long}
+                />
+            )
+        case "CHALLENGE":
+            return <h1>Challange</h1>
+        case "LOGIN":
+            return <Login />
+        case "PROFILE":
+            return <Profile user={props.user} />
+        case "REGISTER":
+            return <div><RegisterComponent /></div>
+        default:
+            return <h1>not found</h1>
+    }
+}

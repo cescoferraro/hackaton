@@ -4,11 +4,8 @@ import * as CSS from "../hey.pcss"
 import TextField from "material-ui/TextField"
 import { CardMedia } from "material-ui/"
 
-@connect(({ user }) => ({ user }))
-export default class Profile extends React.Component<{ user?: any }, {}> {
-    constructor(props) {
-        super(props)
-    }
+export default class Profile extends React.Component<{ user: any }, {}> {
+    constructor(props) { super(props) }
     public render() {
         return (
             <div style={{ overflowX: "hidden", overflowY: "auto" }}>
@@ -16,7 +13,6 @@ export default class Profile extends React.Component<{ user?: any }, {}> {
                     <img src={this.props.user.foto} alt="" />
                 </CardMedia>
                 <br />
-
                 <div>
                     <TextField
                         style={{ marginBottom: 20, marginLeft: 20, marginRight: 20 }}
