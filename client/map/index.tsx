@@ -37,9 +37,7 @@ export const MyMapComponent = compose(
             return null
         })
 
-    console.log(bound.getCenter().lat())
     return (
-
         <GoogleMap
             defaultZoom={15}
             defaultCenter={availableMarkers.length > 0 ? { lat: bound.getCenter().lat(), lng: bound.getCenter().lng() } : { lat: props.lat, lng: props.long }}

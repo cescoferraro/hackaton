@@ -1,9 +1,9 @@
+declare var require: any
 import * as React from "react"
 import { connect } from "react-redux"
 import * as CSS from "../hey.pcss"
 import { ListItem } from "material-ui/List"
 import Avatar from "material-ui/Avatar"
-declare var require: any
 const coin = require("../../public/coin.png")
 import { fakeReward } from "../../shared/shared"
 
