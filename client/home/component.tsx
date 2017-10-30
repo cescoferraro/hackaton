@@ -16,7 +16,7 @@ export default class ProfileLoader extends React.Component<{ challenges?: any, l
         const { challenges, long, lat } = this.props
         const list = Object.keys(challenges).map((key) => {
             const far = distance(lat, long, challenges[key].lat, challenges[key].long)
-            return far < 5000 ? (
+            return far < 6000 ? (
                 <HomeItem
                     challenge={challenges[key]}
                     key={key}

@@ -7,8 +7,7 @@ import Home from "./component"
 export default class HomeLoader extends React.Component<{ dispatch?: any, challenges?: any, lat?: any, long?: any }, {}> {
     constructor(props) { super(props) }
     public render() {
-
-        console.log(23423)
+        const geo = () => navigator.geolocation ? true : false
         const { challenges } = this.props
         return (
             <div>
@@ -29,10 +28,3 @@ export default class HomeLoader extends React.Component<{ dispatch?: any, challe
     }
 }
 
-const geo = () => {
-    if (navigator.geolocation)
-        return true
-    else {
-        return false
-    }
-}
