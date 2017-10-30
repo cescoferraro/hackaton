@@ -37,15 +37,15 @@ const css = (client = false) => {
 
 module.exports = (env = { production: false }) => ({
   devServer: {
-    allowedHosts: ['localhost:5555'],
     compress: true,
     contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     hot: true,
     inline: true,
     noInfo: true,
+    host: '0.0.0.0',
     port: 5555,
-    public: 'localhost:5555',
+    public: '0.0.0.0:5555',
     watchContentBase: true
   },
   devtool: env.production ? 'source-map' : 'cheap-module-eval-source-map',
