@@ -5,7 +5,7 @@ export const distance = (lat1, lon1, lat2, lon2) => {
         c(lat1 * p) * c(lat2 * p) *
         (1 - c((lon2 - lon1) * p)) / 2;
 
-    return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
+    return 1000 * 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
 export const initialUser = {
     name: "joe doe",

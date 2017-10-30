@@ -84,8 +84,7 @@ export default class Login extends React.Component<{ dispatch?: any }, { regular
 
                                         })
                                     })
-                                }
-                                }
+                                }}
                                 label="LOGIN"
                                 secondary={true} />
                             {jojo}

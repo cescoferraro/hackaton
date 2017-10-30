@@ -13,8 +13,8 @@ import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
 import { MyMapComponent } from "./map"
-import Home from "./home"
-import Profile from "./profile/index";
+import HomeLoader from "./home"
+import Profile from "./profile";
 
 import Login from "./login"
 import ReduxToastr from 'react-redux-toastr'
@@ -26,13 +26,12 @@ import SideBar from "./sidebar"
         console.log(state)
         return ({
             challenges: dataToJS(state.firebase, 'challenges'),
-            userId: state.userId,
             sidebar: state.sidebar,
             location: state.location
         })
     }
 )
-export default class App extends React.Component<{ sidebar?: boolean, location?: any, userId?: string, onClick?: any, challenges?: any }, { lat: any, long: any }> {
+export default class App extends React.Component<{ sidebar?: boolean, location?: any, onClick?: any, challenges?: any }, { lat: any, long: any }> {
     constructor(props) {
         super(props)
         this.state = { lat: 0, long: 0 }
@@ -42,33 +41,10 @@ export default class App extends React.Component<{ sidebar?: boolean, location?:
 
     }
     render() {
-        const geo = () => {
-            if (navigator.geolocation)
-                return true
-            else {
-                return false
-            }
-        }
-
         let content;
         switch (this.props.location.type) {
             case "HOME":
-                content = <div>
-                    {
-                        !isLoaded(this.props.challenges)
-                            ? 'Loading'
-                            : isEmpty(this.props.challenges)
-                                ? 'Todo list is empty'
-                                : (
-                                    geo() && this.state.lat ?
-                                        <Home
-                                            lat={this.state.lat}
-                                            long={this.state.long}
-                                            challenges={this.props.challenges}
-                                        /> : <h2>We need you to enable geoloation</h2>
-                                )
-                    }
-                </div>
+                content = <HomeLoader challenges={this.props.challenges} lat={this.state.lat} long={this.state.long} />
                 break;
             case "CHALLENGE":
                 content = <h1>Challange</h1>
@@ -99,22 +75,23 @@ export default class App extends React.Component<{ sidebar?: boolean, location?:
                 content = <h1>not found</h1>
                 break;
         }
-        return <div>
-            <MyAppBar />
-            <div >
-                {content}
+        return (
+            <div>
+                <MyAppBar />
+                <div >
+                    {content}
+                </div>
+                <SideBar open={this.props.sidebar} />
+                <ReduxToastr
+                    timeOut={4000}
+                    newestOnTop={false}
+                    preventDuplicates
+                    position="top-left"
+                    transitionIn="fadeIn"
+                    transitionOut="fadeOut"
+                    progressBar />
             </div>
-            <SideBar open={this.props.sidebar} />
-            <ReduxToastr
-                timeOut={4000}
-                newestOnTop={false}
-                preventDuplicates
-                position="top-left"
-                transitionIn="fadeIn"
-                transitionOut="fadeOut"
-                progressBar />
-
-        </div>
+        )
     }
 }
 

@@ -98,7 +98,7 @@ export const MyMapComponent = compose(
     >
 
         {
-            Object.keys(props.challenges).map((key) => (1000 * distance(props.lat, props.long, props.challenges[key].lat, props.challenges[key].long)) < 5000 ? (
+            Object.keys(props.challenges).map((key) => (distance(props.lat, props.long, props.challenges[key].lat, props.challenges[key].long)) < 5000 ? (
                 <Markerss challenge={props.challenges[key]} id={key} key={key} ></Markerss>) : null)}
     </GoogleMap>
     )
