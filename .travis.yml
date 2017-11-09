@@ -4,11 +4,13 @@ node_js:
   - 8
 
 before_install:
-    - echo 32 
+    - echo "qualquer coisa que eu desejar" 
 install:
     - yarn install
 script:
     - yarn build 
+    - yarn test
+    - yarn lint || true
 
 deploy:
   provider: pages
