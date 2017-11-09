@@ -9,8 +9,6 @@ install:
     - yarn install
 script:
     - yarn build 
-    - yarn test
-    - yarn lint || true
 
 deploy:
   provider: pages
