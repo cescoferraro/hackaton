@@ -16,7 +16,7 @@ import { initialUser } from "../../shared/shared";
 export default class SideBar extends React.Component<{ dispatch?: any, auth?: any, user?: any }>{
     render() {
         return <AppBar
-        title="GCS"
+        title="CKJNKN"
         onLeftIconButtonTouchTap={() => { this.props.dispatch({ type: "TOOGLE_SIDEBAR" }) }}
         onTitleTouchTap={() => { this.props.dispatch({ type: "HOME" }) }}
         iconElementRight={
