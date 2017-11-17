@@ -1,0 +1,211 @@
+html,body{
+    background-color: #F0F8FF;
+    margin:0;
+    overflow: hidden;
+}
+
+.hey__ramiro--3owtJ{
+    background-color: fuchsia;
+}
+
+.hey__test--3jE8a{
+    background-color: #F0F8FF;
+
+    height: 50vh;
+    width: 100%;
+}
+
+h1{margin:0;}
+
+.hey__register--2XEeF{
+    background-color: #F0F8FF;
+    width: 100 vh;
+    height: 100vh;
+    text-align: center;
+}
+
+h2{margin:0;}
+
+.hey__list--1XkPM{
+    height: -webkit-calc(50vh - 64px);
+    height: -moz-calc(50vh - 64px);
+    height: calc(50vh - 64px);
+    max-height: -webkit-calc(50vh - 64px);
+    max-height: -moz-calc(50vh - 64px);
+    max-height: calc(50vh - 64px);
+    overflow: auto;
+}
+
+.hey__listMarker--1IlNE{
+    height: 200px;
+    width: 220px;
+    overflow: auto;
+}
+
+.hey__desc--m2lMm{
+    font-size: small;
+    margin-left: 10px;
+    margin-right: 10px; 
+}
+
+.hey__content--3x-d3{
+    background-color: #F0F8FF;
+    height: -webkit-calc(100vh - 64px);
+    height: -moz-calc(100vh - 64px);
+    height: calc(100vh - 64px); 
+    width: 100vw; 
+    display: -webkit-box; 
+    display: -webkit-flex; 
+    display: -moz-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.hey__content--3x-d3 .hey__login--3kI_o{
+	background-color: green;
+	height: 70vh;
+	width: 50vh;
+    }
+
+.hey__content--3x-d3 .hey__login--3kI_o .hey__logoLogin--3A0OL{
+	    background-color:#F0F8FF;
+	    height: 15vh;
+	    width: 48vh;
+	    padding-left: 1.5%;
+        padding-top: 1%;
+	}
+
+.hey__content--3x-d3 .hey__login--3kI_o .hey__logoLogin--3A0OL img {
+		height: 25vh;
+		display: block;
+		max-height:25vh;
+        height: auto;
+        margin-bottom:20vh
+	    }
+
+.hey__content--3x-d3 .hey__login--3kI_o .hey__work--2wlsb{
+	    height:35vh;
+
+	}
+
+.hey__pedra--39rjI{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+
+}
+
+.hey__pedra--39rjI .hey__coin--1c23h{
+	width: 30px;
+    height: 30px;
+    
+
+    }
+
+.hey__pedra--39rjI .hey__price--ppmTS{
+	font-weight: 900;
+	font-size: medium;
+	width: 30px;
+	height: 30px;
+    margin-top: 16px;
+    margin-left: 8px;
+    }
+
+.hey__pedraMarker--S9lCa{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+
+}
+
+.hey__pedraMarker--S9lCa .hey__coinMarker--2evKC{
+	max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;    
+
+    }
+
+.hey__pedraMarker--S9lCa .hey__priceMarker--3pDDZ{
+	font-weight: 900;
+	font-size: medium;
+	width: 30px;
+	height: 30px;
+    margin-top: 40px;
+    margin-left: 3px;
+    }
+
+.hey__profile--1jjVC{
+    height: -webkit-calc(100vh - 64px);
+    height: -moz-calc(100vh - 64px);
+    height: calc(100vh - 64px);
+}
+
+.hey__profilePhoto--1k4EJ{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 10px;
+
+}
+
+.hey__profilePhoto--1k4EJ div {
+	width:25vh!important;
+	height:25vh;
+    }
+
+.hey__IconMap--19Pcn{
+    float: right;
+    size: 50;
+    margin-right:10%; 
+}
+
+/*# sourceMappingURL=main.4f0838dd3a7faea7d5ec2e360bbf4049.css.map*/
